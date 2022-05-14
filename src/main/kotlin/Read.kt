@@ -1,0 +1,1 @@
+fun read() = database.forEach { println(it) }
