@@ -1,5 +1,13 @@
+fun searchGUI() {
+    print("Enter the searched value:\n>>>")
+    val input: String = readLine()?.trim() ?: readLine().toString()
+    val results = search(input)
+    if (results.size == 0) println("No such entry!")
+    else results.forEach { println(it) }
+}
+
 fun search(input: String): ArrayList<Entry>{
-    var ret: ArrayList<Entry> = ArrayList<Entry>()
+    val ret: ArrayList<Entry> = ArrayList()
     database.forEach {
         if (it.getFname() == input
             || it.getFname() == input
@@ -10,12 +18,4 @@ fun search(input: String): ArrayList<Entry>{
         ) ret.add(it)
     }
     return ret
-}
-
-fun searchGUI() {
-    print("Enter the searched value:\n>>>")
-    val input: String = readLine()?.trim() ?: readLine().toString()
-    val results = search(input)
-    if (results.size == 0) println("No such entry!")
-    else results.forEach { println(it) }
 }

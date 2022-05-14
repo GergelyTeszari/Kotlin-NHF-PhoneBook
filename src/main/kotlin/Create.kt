@@ -17,7 +17,6 @@ fun create() {
         print("\nNew contact's private phone number:\n>>>")
         newPrivateNumber = readLine()?.trim() ?: readLine().toString()
         if (!isInTheList(newPrivateNumber)) break
-        else println("Private number is already in the list!")
     }
 
     var newWorkNumber: String
@@ -25,7 +24,6 @@ fun create() {
         print("\nNew contact's work phone number:\n>>>")
         newWorkNumber = readLine()?.trim() ?: readLine().toString()
         if (!isInTheList(newWorkNumber)) break
-        else println("Work number is already in the list!")
     }
 
     database.add(

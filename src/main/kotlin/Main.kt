@@ -6,11 +6,11 @@ fun main() {
         println("\nData input:\t\tC"
                     + "\n\nData listing:\t\tR"
                     + "\n\nData modify:\t\tU"
-                    + "\n\nDate delete:\t\t\tD"
+                    + "\n\nData delete:\t\t\tD"
                     + "\n\nSearch:\t\t\tS"
                     + "\n\nSave:\t\t\t\tF"
                     + "\n\nSave and exit:\t\tX\n\n>>>")
-        val choose: String? = readLine()
+        val choose = readLine()
         if (choose != null) when (choose.uppercase().trim()){
             "C" -> create()
             "R" -> read()

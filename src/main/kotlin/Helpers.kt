@@ -1,12 +1,15 @@
 fun isInTheList(input: String): Boolean{
     database.forEach {
-        if (it.getPnum().equals(input) || it.getWnum().equals(input))  return true
+        if (it.getPnum() == input || it.getWnum() == input)  {
+            println("The value is already in the database!")
+            return true
+        }
     }
     return false
 }
 
 fun waitForResponse() {
-    println("Press any key to continue...")
+    println("Press Enter to continue...")
     readLine()
 }
 

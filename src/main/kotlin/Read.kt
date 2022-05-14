@@ -1,1 +1,5 @@
-fun read() = database.forEach { println(it) }
+fun read() {
+    cls()
+    if (database.isEmpty()) println("Database empty!")
+    database.forEach { println(it) }
+}
