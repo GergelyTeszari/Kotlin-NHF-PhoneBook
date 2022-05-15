@@ -11,8 +11,8 @@ fun isInTheList(input: String): Boolean{
 fun toEnglish(word: String): String{
     val wordList: ArrayList<Char> = ArrayList()
     word.forEach { wordList.add(it) }
-    val hunChars = listOf<Char>('á', 'é', 'í', 'ó', 'ö', 'ő', 'ú', 'ü', 'ű')
-    val simple  = listOf<Char>('a', 'e', 'i', 'o', 'o', 'o', 'u', 'u', 'u')
+    val hunChars = listOf('á', 'é', 'í', 'ó', 'ö', 'ő', 'ú', 'ü', 'ű')
+    val simple  = listOf('a', 'e', 'i', 'o', 'o', 'o', 'u', 'u', 'u')
     for (wordIndex in wordList){
         val letterIndex = hunChars.indexOf(wordIndex.lowercaseChar())
         if(letterIndex != -1) wordList[wordList.indexOf(wordIndex)] = simple[letterIndex]
@@ -30,8 +30,8 @@ fun cls() {
 }
 
 fun stringToHexASCII(s: String): String {
-    var ret = "=" //starts with "="
-    val array = s.toCharArray() //converts the string to char array
+    var ret = "="
+    val array = s.toCharArray()
     for (i in array.indices) {
         val dec = array[i].code //gets the char's ASCII code
         ret += Integer.toHexString(dec) //converts it to hex ASCII code

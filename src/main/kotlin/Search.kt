@@ -21,3 +21,26 @@ fun search(input: String): ArrayList<Entry>{
     }
     return ret
 }
+
+fun indexedSearch(method: String): ArrayList<Entry>{
+    read(true)
+    print("What to $method?\n>>>")
+    var results = ArrayList<Entry>()
+    val search = readLine()?.trim() ?: readLine().toString()
+    try {
+        search.toInt()
+        if (search.toInt() > database.size || search.toInt() <= 0){
+            println("No such index, searching in phonenumber mode...")
+            results = search(search)
+        }
+        else {
+            println("Index detected, searching with index...")
+            results.add(database[search.toInt()-1])
+        }
+    }
+    catch (e: Exception){
+        println("The value is not a number, searching in text mode...")
+        results = search(search)
+    }
+    return results
+}

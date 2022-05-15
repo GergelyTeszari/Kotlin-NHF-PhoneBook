@@ -1,11 +1,9 @@
 fun update(){
-    print("What to update?\n>>>")
-    //TODO kiiratás és indexelt kiválasztás
-    val results = search(readLine()?.trim() ?: readLine().toString())
+    val results = indexedSearch("update")
     if (results.size != 1) println("Given parameter not accurate or no such entry!")
     else {
         database.forEach {
-            if (it == results[0]){
+            if (it.getPnum() == results[0].getPnum() && it.getWnum() == results[0].getWnum()){
                 print("$it\n")
                 print("Which parameter should be modified?\n" +
                         "F:\tFirstname\n" +
@@ -14,10 +12,10 @@ fun update(){
                         "A:\tAddress\n" +
                         "P:\tPrivate number\n" +
                         "W:\tWork number\n>>>")
-                val choose = readLine()?.trim() ?: readLine().toString()
+                val whichParameter = readLine()?.trim() ?: readLine().toString()
                 print("What will be the new value?\n>>>")
                 val toWhat = readLine()?.trim() ?: readLine().toString()
-                when (choose) {
+                when (whichParameter) {
                     "F" -> it.setFname(toEnglish(toWhat))
                     "L" -> it.setLname(toEnglish(toWhat))
                     "N" -> it.setNname(toEnglish(toWhat))
@@ -31,6 +29,7 @@ fun update(){
                         else println("Error!")
                     }
                 }
+                return
             }
         }
     }

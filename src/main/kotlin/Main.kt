@@ -11,8 +11,8 @@ fun main() {
                     + "\n\nExport to .VCF:\t\t\tV"
                     + "\n\nSave database:\t\t\t\tF"
                     + "\n\nSave database and exit:\t\tX\n\n>>>")
-        val choose = readLine()
-        if (choose != null) when (choose.uppercase().trim()){
+        val choose = readLine()?.trim() ?: readLine().toString()
+        when (choose.uppercase().trim()){
             "C" -> create()
             "R" -> read(false)
             "U" -> update()
@@ -29,4 +29,5 @@ fun main() {
         }
         waitForResponse()
     }
+    waitForResponse()
 }
