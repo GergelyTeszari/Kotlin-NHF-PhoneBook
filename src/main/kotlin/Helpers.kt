@@ -39,3 +39,11 @@ fun stringToHexASCII(s: String): String {
     }
     return ret
 }
+
+fun getInput(): String {
+    var input: String
+    do {
+        input = readLine()!!.trim()
+    } while(input.isEmpty())
+    return input
+}

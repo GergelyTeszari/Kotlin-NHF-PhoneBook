@@ -12,10 +12,10 @@ fun update(){
                         "A:\tAddress\n" +
                         "P:\tPrivate number\n" +
                         "W:\tWork number\n>>>")
-                val whichParameter = readLine()?.trim() ?: readLine().toString()
+                val whichParameter = getInput()
                 print("What will be the new value?\n>>>")
-                val toWhat = readLine()?.trim() ?: readLine().toString()
-                when (whichParameter) {
+                val toWhat = getInput()
+                when (whichParameter.uppercase()) {
                     "F" -> it.setFname(toEnglish(toWhat))
                     "L" -> it.setLname(toEnglish(toWhat))
                     "N" -> it.setNname(toEnglish(toWhat))

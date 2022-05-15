@@ -1,28 +1,28 @@
 fun create() {
     cls()
     print("\nNew contact's firstname:\n>>>")
-    val newFirstName: String = readLine()?.trim() ?: readLine().toString()
+    val newFirstName = getInput()
 
     print("\nNew contact's lastname:\n>>>")
-    val newLastName: String = readLine()?.trim() ?: readLine().toString()
+    val newLastName = getInput()
 
     print("\nNew contact's nickname:\n>>>")
-    val newNickName: String = readLine()?.trim() ?: readLine().toString()
+    val newNickName = getInput()
 
     print("\nNew contact's address:\n>>>")
-    val newAddress: String = readLine()?.trim() ?: readLine().toString()
+    val newAddress = getInput()
 
     var newPrivateNumber: String
     while (true){
         print("\nNew contact's private phone number:\n>>>")
-        newPrivateNumber = readLine()?.trim() ?: readLine().toString()
+        newPrivateNumber = getInput()
         if (!isInTheList(newPrivateNumber)) break
     }
 
     var newWorkNumber: String
     while (true) {
         print("\nNew contact's work phone number:\n>>>")
-        newWorkNumber = readLine()?.trim() ?: readLine().toString()
+        newWorkNumber = getInput()
         if (!isInTheList(newWorkNumber)) break
     }
 

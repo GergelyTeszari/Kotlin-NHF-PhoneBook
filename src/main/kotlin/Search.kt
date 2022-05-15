@@ -1,6 +1,6 @@
 fun searchGUI() {
     print("Enter the searched value:\n>>>")
-    val input: String = readLine()?.trim() ?: readLine().toString()
+    val input: String = getInput()
     val results = search(input)
     if (results.size == 0) println("No such entry!")
     else results.forEach { println(it) }
@@ -26,11 +26,11 @@ fun indexedSearch(method: String): ArrayList<Entry>{
     read(true)
     print("What to $method?\n>>>")
     var results = ArrayList<Entry>()
-    val search = readLine()?.trim() ?: readLine().toString()
+    val search = getInput()
     try {
         search.toInt()
         if (search.toInt() > database.size || search.toInt() <= 0){
-            println("No such index, searching in phonenumber mode...")
+            println("No such index, searching in phone number mode...")
             results = search(search)
         }
         else {
