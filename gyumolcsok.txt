@@ -1,0 +1,8 @@
+alma körte 012
+körte szilva 123
+szilva barack 234
+alma szilva 345
+alma barack 456
+körte szilva 567
+körte barack 678
+szilva barack 789
