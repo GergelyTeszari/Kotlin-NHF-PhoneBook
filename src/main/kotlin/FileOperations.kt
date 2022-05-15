@@ -32,4 +32,5 @@ fun save() {
             out.println(it.toFile())
         }
     }
+    println("File written successfully!")
 }

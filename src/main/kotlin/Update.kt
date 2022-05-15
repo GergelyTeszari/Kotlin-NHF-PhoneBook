@@ -5,7 +5,7 @@ fun update(){
     else {
         database.forEach {
             if (it == results[0]){
-                print(it)
+                print("$it\n")
                 print("Which parameter should be modified?\n" +
                         "F:\tFirstname\n" +
                         "L:\tLastname\n" +
@@ -22,9 +22,12 @@ fun update(){
                     "N" -> it.setNname(toWhat)
                     "A" -> it.setAddress(toWhat)
                     "P" -> {
-                        if (!isInTheList(toWhat)) it.setPnum(toWhat)                    }
+                        if (!isInTheList(toWhat)) it.setPnum(toWhat)
+                        else println("Error!")
+                    }
                     "W" -> {
                         if (!isInTheList(toWhat)) it.setWnum(toWhat)
+                        else println("Error!")
                     }
                 }
             }

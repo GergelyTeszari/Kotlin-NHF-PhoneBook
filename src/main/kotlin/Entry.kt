@@ -22,49 +22,17 @@ class Entry(
         this.workNumber = workNumber
     }
 
-    fun getFname(): String{
-        return this.firstName
-    }
-
-    fun getLname(): String{
-        return this.lastName
-    }
-
-    fun getNname(): String {
-        return this.nickName
-    }
-
-    fun getPnum(): String{
-        return this.privateNumber
-    }
-
-    fun getWnum(): String {
-        return this.workNumber
-    }
-
-    fun setFname(value: String){
-        this.firstName=value
-    }
-
-    fun setLname(value: String){
-        this.lastName=value
-    }
-
-    fun setNname(value: String){
-        this.nickName=value
-    }
-
-    fun setAddress(value: String){
-        this.address=value
-    }
-
-    fun setPnum(value: String){
-        this.privateNumber=value
-    }
-
-    fun setWnum(value: String){
-        this.workNumber=value
-    }
+    fun getFname() = this.firstName
+    fun getLname() = this.lastName
+    fun getNname() = this.nickName
+    fun getPnum() = this.privateNumber
+    fun getWnum() = this.workNumber
+    fun setFname(value: String) = value.also { firstName = it }
+    fun setLname(value: String) = value.also { lastName = it }
+    fun setNname(value: String) = value.also { nickName = it }
+    fun setAddress(value: String) = value.also { address = it }
+    fun setPnum(value: String) = value.also { privateNumber = it }
+    fun setWnum(value: String) = value.also { workNumber = it }
 
     override fun toString(): String {
         return "Entry:" +
@@ -75,6 +43,10 @@ class Entry(
     }
 
     fun toFile(): String{
-        return "$firstName,$lastName,$nickName,$address,$privateNumber,$workNumber\n"
+        return "${toEnglish(firstName)}," +
+                "${toEnglish(lastName)}," +
+                "${toEnglish(nickName)}," +
+                "${toEnglish(address)}," +
+                "$privateNumber,$workNumber"
     }
 }

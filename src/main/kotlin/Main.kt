@@ -3,13 +3,13 @@ fun main() {
     while (true) {
         cls()
         println("Welcome to Jaser phonebook program!\nWhat shall we do?")
-        println("\nData input:\t\tC"
-                    + "\n\nData listing:\t\tR"
-                    + "\n\nData modify:\t\tU"
-                    + "\n\nData delete:\t\t\tD"
-                    + "\n\nSearch:\t\t\tS"
-                    + "\n\nSave:\t\t\t\tF"
-                    + "\n\nSave and exit:\t\tX\n\n>>>")
+        println("\nCreate new entry:\t\tC"
+                    + "\n\nList entries:\t\tR"
+                    + "\n\nModify entry:\t\tU"
+                    + "\n\nDelete entry:\t\t\tD"
+                    + "\n\nSearch in database:\t\t\tS"
+                    + "\n\nSave database:\t\t\t\tF"
+                    + "\n\nSave database and exit:\t\tX\n\n>>>")
         val choose = readLine()
         if (choose != null) when (choose.uppercase().trim()){
             "C" -> create()
@@ -20,6 +20,7 @@ fun main() {
             "F" -> save()
             "X" -> {
                 save()
+                println("Goodbye!")
                 break
             }
             else -> println("Option not recognizable!")
