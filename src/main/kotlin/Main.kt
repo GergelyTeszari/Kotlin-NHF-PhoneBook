@@ -8,18 +8,20 @@ fun main() {
                     + "\n\nModify entry:\t\tU"
                     + "\n\nDelete entry:\t\t\tD"
                     + "\n\nSearch in database:\t\t\tS"
+                    + "\n\nExport to .VCF:\t\t\tV"
                     + "\n\nSave database:\t\t\t\tF"
                     + "\n\nSave database and exit:\t\tX\n\n>>>")
         val choose = readLine()
         if (choose != null) when (choose.uppercase().trim()){
             "C" -> create()
-            "R" -> read()
+            "R" -> read(false)
             "U" -> update()
             "D" -> delete()
             "S" -> searchGUI()
-            "F" -> save()
+            "V" -> save(true)
+            "F" -> save(false)
             "X" -> {
-                save()
+                save(false)
                 println("Goodbye!")
                 break
             }

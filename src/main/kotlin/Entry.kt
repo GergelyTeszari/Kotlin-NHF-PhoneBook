@@ -49,4 +49,32 @@ class Entry(
                 "${toEnglish(address)}," +
                 "$privateNumber,$workNumber"
     }
+
+    fun toVCF(): String {
+        return """
+         BEGIN:VCARD
+         VERSION:2.1
+         N;CHARSET=UTF-8;ENCODING=QUOTED-PRINTABLE:${stringToHexASCII(this.firstName)};${
+            stringToHexASCII(
+                this.lastName
+            )
+        };;;
+         FN;CHARSET=UTF-8;ENCODING=QUOTED-PRINTABLE:${stringToHexASCII(this.lastName)}=20${
+            stringToHexASCII(
+                this.firstName
+            )
+        }
+         X-ANDROID-CUSTOM;CHARSET=UTF-8;ENCODING=QUOTED-PRINTABLE:vnd.android.cursor.item/nickname;${
+            stringToHexASCII(
+                this.nickName
+            )
+        };=31;;;;;;;;;;;;;
+         TEL;WORK:${workNumber}
+         TEL;CELL:${privateNumber}
+         ADR;HOME;CHARSET=UTF-8;ENCODING=QUOTED-PRINTABLE:;;${stringToHexASCII(this.address)};;;;
+         END:VCard
+         
+         
+         """.trimIndent()
+    }
 }

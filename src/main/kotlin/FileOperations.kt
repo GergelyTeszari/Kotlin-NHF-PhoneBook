@@ -10,7 +10,8 @@ fun fileInput(): ArrayList<Entry> {
         lineList.forEach{
             var splitted = it.split(',')
             ret.add(
-                Entry(splitted.get(0),
+                Entry(
+                    splitted.get(0),
                     splitted.get(1),
                     splitted.get(2),
                     splitted.get(3),
@@ -26,10 +27,19 @@ fun fileInput(): ArrayList<Entry> {
     }
 }
 
-fun save() {
-    File("Entries.csv").printWriter().use { out ->
-        database.forEach {
-            out.println(it.toFile())
+fun save(toVCF: Boolean) {
+    if (!toVCF){
+        File("Entries.csv").printWriter().use { out ->
+            database.forEach {
+                out.println(it.toFile())
+            }
+        }
+    }
+    else{
+        File("Entries.vcf").printWriter().use { out ->
+            database.forEach {
+                out.println(it.toVCF())
+            }
         }
     }
     println("File written successfully!")

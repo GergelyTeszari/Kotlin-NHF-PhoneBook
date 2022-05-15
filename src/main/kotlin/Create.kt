@@ -28,10 +28,10 @@ fun create() {
 
     database.add(
         Entry(
-            firstName = newFirstName,
-            lastName = newLastName,
-            nickName = newNickName,
-            address = newAddress,
+            firstName = toEnglish(newFirstName),
+            lastName = toEnglish(newLastName),
+            nickName = toEnglish(newNickName),
+            address = toEnglish(newAddress),
             privateNumber = newPrivateNumber,
             workNumber = newWorkNumber,
         )

@@ -9,12 +9,14 @@ fun searchGUI() {
 fun search(input: String): ArrayList<Entry>{
     val ret: ArrayList<Entry> = ArrayList()
     database.forEach {
-        if (it.getFname() == input
-            || it.getFname() == input
-            || it.getLname() == input
-            || it.getNname() == input
-            || it.getPnum() == input
-            || it.getWnum() == input
+        if (it.getFname().equals(input, ignoreCase = true)
+            || it.getLname().equals(input, ignoreCase = true)
+            || it.getNname().equals(input, ignoreCase = true)
+            || it.getFname().equals(toEnglish(input), ignoreCase = true)
+            || it.getLname().equals(toEnglish(input), ignoreCase = true)
+            || it.getNname().equals(toEnglish(input), ignoreCase = true)
+            || it.getPnum().equals(input, ignoreCase = true)
+            || it.getWnum().equals(input, ignoreCase = true)
         ) ret.add(it)
     }
     return ret
